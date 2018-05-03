@@ -19,7 +19,7 @@ const getTone = (text) => {
   return new Promise((resolve, reject) => {
     toneAnalyzer.tone(params, (err, response) => {
       if (err !== null) reject(err);
-      resolve(JSON.stringify(response, null, 2));
+      resolve(JSON.stringify(response));
     });
   });
 };
@@ -27,7 +27,7 @@ const getTone = (text) => {
 // async wrapper
 const tone = async (text) => {
   const data = await getTone(text);
-  return data;
+  return JSON.parse(data);
 };
 
 module.exports.tone = tone;
