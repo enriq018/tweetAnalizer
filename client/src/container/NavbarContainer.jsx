@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Navbar } from '../present/Navbar.js';
+import { Navbar } from '../present/Navbar.jsx';
 
 class NavbarContainer extends React.Component {
   constructor(props) {

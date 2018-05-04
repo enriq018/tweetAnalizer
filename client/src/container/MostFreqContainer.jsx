@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { MostFreq } from '../present/MostFreq.js';
+import { MostFreq } from '../present/MostFreq.jsx';
 
 class MostFreqContainer extends React.Component {
   constructor(props) {
