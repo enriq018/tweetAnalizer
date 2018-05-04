@@ -1,18 +1,10 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { SingleTweet } from "./container/SingleTweet.js";
+import { MainContainer } from "./container/MainContainer.js";
 
 
-class App extends React.Component {
-  constructor(props) {
-    super();
-  }
-
-  render() {
-    return (
-      <SingleTweet />
-    );
-  }
-}
+const App = () => (
+  <MainContainer />
+)
 
 ReactDOM.render(<App />, document.getElementById("app"));
