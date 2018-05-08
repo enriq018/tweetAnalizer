@@ -2,10 +2,10 @@ const freqMood = (arr) => {
   const moodMap = {};
   arr.forEach((el) => {
     el.analyzedTweet.document_tone.tones.forEach((tone) => {
-      if (moodMap[tone.tone_id.toUpperCase()]) {
-        moodMap[tone.tone_id.toUpperCase()] += 1;
+      if (moodMap[tone.tone_name]) {
+        moodMap[tone.tone_name] += 1;
       } else {
-        moodMap[tone.tone_id.toUpperCase()] = 1;
+        moodMap[tone.tone_name] = 1;
       }
     });
   });

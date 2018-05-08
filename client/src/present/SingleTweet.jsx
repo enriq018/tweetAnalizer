@@ -1,24 +1,26 @@
 import React, { Component } from 'react';
 
-const SingleTweet = props => (
+const TweetToneView = ({ tones }) => {
+  return tones.map(el => <a className="button is-outlined is-medium">{el.tone_name}</a>);
+};
+
+const SingleTweet = ({ tweetData }) => (
   <div className="box">
 
   <article className="media">
     <div className="media-left">
       <figure className="image is-64x64">
-        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image"/>
+        <img src={tweetData.tweet.user.profile_image_url} alt="Image"/>
       </figure>
     </div>
     <div className="media-content">
       <div className="content">
         <p>
-          <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-          <br/>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+        {tweetData.tweet.text}
         </p>
+        {tweetData.tweet.created_at}
       </div>
-      <a className="button is-danger is-rounded is-small">Rounded</a>
-      <a className="button is-danger is-rounded is-small">Rounded</a>
+      <TweetToneView tones={tweetData.analyzedTweet.document_tone.tones} />
     </div>
 
   </article>

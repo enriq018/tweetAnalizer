@@ -4,9 +4,10 @@ import { getUserTweets } from '../requestHelper.js'
 import { freqMood } from '../freqMood.js'
 // import { SingleTweetView } from '../present/SingleTweetView.jsx';
 import { NavbarContainer } from './NavbarContainer.jsx';
+import { Tweets } from '../present/Tweets.jsx';
 import { MostFreq } from '../present/MostFreq.jsx';
-import { SingleTweet } from '../present/SingleTweet.jsx';
 import { ProgressBars } from '../present/ProgressBars.jsx';
+
 class MainContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -39,13 +40,11 @@ class MainContainer extends React.Component {
   render() {
     return (
       <div className="container is-fluid">
-        <NavbarContainer />
+        <NavbarContainer analyzeUser={this.analyzeUser}  />
         <br />
-        <MostFreq freqMoodData={this.state.freqMoodData} />
+        <MostFreq freqMoodData={this.state.freqMoodData} tweetData={this.state.tweetData} />
         <div className="box">
-          <SingleTweet />
-          <SingleTweet />
-          <SingleTweet />
+          <Tweets tweetData={this.state.tweetData} />
         </div>
         <ProgressBars />
 
