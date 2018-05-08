@@ -10,18 +10,19 @@ module.exports = {
     path: DIST_DIR,
     filename: 'bundle.js',
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   devServer: {
     contentBase: './dist',
   },
+
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx?/,
-        include: SRC_DIR,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015'],
-        },
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loaders: ['babel-loader?presets[]=react,presets[]=es2015'],
       },
     ],
   },

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { SingleTweetView } from '../present/SingleTweetView.jsx';
+// import { SingleTweetView } from '../present/SingleTweetView.jsx';
 import { NavbarContainer } from './NavbarContainer.jsx';
 import { MostFreqContainer } from './MostFreqContainer.jsx';
 import { SingleTweet } from '../present/SingleTweet.jsx';
@@ -17,7 +17,7 @@ class MainContainer extends React.Component {
     return (
       <div className="container is-fluid">
         <NavbarContainer />
-        <br/>
+        <br />
         <MostFreqContainer />
         <div className="box">
           <SingleTweet />
@@ -33,18 +33,3 @@ class MainContainer extends React.Component {
 
 
 module.exports.MainContainer = MainContainer;
-
-// <div className="container is-fluid">
-// <Navbar />
-// <br/>
-// <MostFreq />
-
-// <div className="box">
-// <SingleTweet />
-// <SingleTweet />
-// <SingleTweet />
-// </div>
-
-// <ProgressBars />
-
-// </div>
