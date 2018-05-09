@@ -3,6 +3,7 @@ const { tone } = require('./tone.js');
 
 const analyzeTweets = async (username) => {
   const tweets = await getUserTweets(username);
+  // filter, if singleTweet
   const promiseArray = tweets.map(async (singleTweet, i) => {
     const analyzedTweet = await tone(singleTweet.full_text);
     return { tweet: tweets[i], analyzedTweet };
@@ -16,5 +17,6 @@ const analyzeTweets = async (username) => {
     }
   });
 };
+
 
 module.exports.analyzeTweets = analyzeTweets;

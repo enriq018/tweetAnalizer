@@ -5,10 +5,10 @@ const MostFreq = ({ freqMoodData, tweetData }) => (
 
     <div className="columns">
       <div className="column">
-        {tweetData.length > 0 ? `${tweetData[0].tweet.user.screen_name}'s Most Freq Mood(s): ${freqMoodData.join(', ')}` : ''}
+        {tweetData.length > 0 ? `${tweetData[0].tweet.user.screen_name}'s Most Frequent Mood: ${freqMoodData.join(', ')}` : ''}
       </div>
       <div className="column">
-      People's Most Freq Mood:
+      People's Most Frequent Mood:
       </div>
     </div>
     </div>

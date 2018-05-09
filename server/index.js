@@ -16,8 +16,7 @@ app.use('/', express.static(path.join(__dirname, '../client/dist')));
 app.use(bodyParser.json());
 
 app.get('/tweets/:username', async (req, res) => {
-  const data = await analyzeTweets(req.params.username);
-  // console.log(data);
+  // const data = await analyzeTweets(req.params.username);
   // res.send(data);
   res.send(mock);
 });

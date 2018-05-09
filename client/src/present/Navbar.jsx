@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 const Navbar = ({ searchBox, analyzeUser, user }) => (
-  <div className="box">
+  <div className="box navbar">
     <div className="columns is-mobile">
       <div className="column is-half ">
         <h1>Tweet Analyzer</h1>

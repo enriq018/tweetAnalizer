@@ -13,7 +13,7 @@ const getWrapper = (username) => {
   });
 };
 
-const getUserTweets = async (username = 'barackobama') => {
+const getUserTweets = async (username = 'billgates') => {
   const data = await getWrapper(username);
   return data;
 };

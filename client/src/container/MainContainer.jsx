@@ -39,7 +39,7 @@ class MainContainer extends React.Component {
 
   render() {
     return (
-      <div className="container is-fluid">
+      <div className="container is-fluid main">
         <NavbarContainer analyzeUser={this.analyzeUser} />
         <br />
         <div className="box">
