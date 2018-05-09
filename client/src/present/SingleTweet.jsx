@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
 
-const moods = {
-  'Analytical': 'button is-primary',
-  Confident: 'button is-info',
-  Fear: 'button is-black',
-  Joy: 'button is-warning',
-  Tentative: 'button is-link',
-  undefined: 'button is-outlined',
-}
+import { moods } from '../moods.js';
 
 const TweetToneView = ({ tones }) => {
-  return tones.map(el => <a className={ `${moods[el.tone_name]} is-medium` }>{el.tone_name}</a>);
+  return tones.map(el => <a className={ `button ${moods[el.tone_name]} is-medium is-unselectable` }>{el.tone_name}</a>);
 };
 
 const SingleTweet = ({ tweetData }) => (
