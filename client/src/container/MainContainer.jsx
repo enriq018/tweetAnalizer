@@ -20,7 +20,7 @@ class MainContainer extends React.Component {
     this.analyzeUser = this.analyzeUser.bind(this);
   }
   componentDidMount() {
-    getUserTweets()
+    getUserTweets(false)
       .then((data) => {
         const freqData = freqMood(data.data);
         // console.log(freqData)
@@ -44,7 +44,7 @@ class MainContainer extends React.Component {
 
   render() {
     return (
-      <div className="container is-fluid">
+      <div className="container">
         <NavbarContainer analyzeUser={this.analyzeUser} />
         <br />
         <div className="box">

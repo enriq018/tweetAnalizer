@@ -12,7 +12,7 @@ const MostFreq = ({ freqMoodData, tweetData }) => (
     <div className="columns">
       <div className="column">
         {tweetData.length > 0 ? <div>
-          {`${tweetData[0].tweet.user.screen_name}'s Most Frequent Mood:`}
+          {`${tweetData[0].tweet.user.screen_name}'s Most Frequent Mood `}
           {freqMoodData.map((el, i) => <Tag mood={el} key={i} />)}
         </div> : ''}
       </div>

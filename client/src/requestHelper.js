@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const getWrapper = (username) => {
-  const url = `http://localhost:3000/tweets/${username}`;
+  const url = username ? `http://localhost:3000/tweets/${username}` : 'http://localhost:3000/init';
   return new Promise((resolve, reject) => {
     axios.get(url)
       .then((response) => {
@@ -13,7 +13,7 @@ const getWrapper = (username) => {
   });
 };
 
-const getUserTweets = async (username = 'billgates') => {
+const getUserTweets = async (username) => {
   const data = await getWrapper(username);
   return data;
 };
