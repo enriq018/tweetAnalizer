@@ -16,7 +16,7 @@ const SingleTweet = ({ tweetData }) => (
     <div className="media-content">
       <div className="content">
         <p>
-        {tweetData.tweet.text}
+        {tweetData.tweet.full_text}
         </p>
         {tweetData.tweet.created_at}
       </div>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 const ProgressBars = props => (
-  <div className="box">
     <div className="columns">
       <div className="column">
       User's Mood Stats
@@ -14,7 +13,6 @@ const ProgressBars = props => (
         <progress className="progress is-link" value="30" max="100">30%</progress>
       </div>
     </div>
-  </div>
 );
 
 module.exports.ProgressBars = ProgressBars;

@@ -4,7 +4,7 @@ const { tone } = require('./tone.js');
 const analyzeTweets = async (username) => {
   const tweets = await getUserTweets(username);
   const promiseArray = tweets.map(async (singleTweet, i) => {
-    const analyzedTweet = await tone(singleTweet.text);
+    const analyzedTweet = await tone(singleTweet.full_text);
     return { tweet: tweets[i], analyzedTweet };
   });
   const tweetsAnalyzed = await Promise.all(promiseArray);

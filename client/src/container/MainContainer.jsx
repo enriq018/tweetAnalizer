@@ -40,11 +40,10 @@ class MainContainer extends React.Component {
   render() {
     return (
       <div className="container is-fluid">
-        <NavbarContainer analyzeUser={this.analyzeUser}  />
+        <NavbarContainer analyzeUser={this.analyzeUser} />
         <br />
-        <MostFreq freqMoodData={this.state.freqMoodData} tweetData={this.state.tweetData} />
         <div className="box">
-          <Tweets tweetData={this.state.tweetData} />
+          <Tweets tweetData={this.state.tweetData} freqMoodData={this.state.freqMoodData} />
         </div>
         <ProgressBars />
 
