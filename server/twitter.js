@@ -9,7 +9,7 @@ const client = new Twitter({
 
 const getUserTweetsRequest = (user) => {
   // count = number of recent tweets
-  const params = { screen_name: user, count: 2 };
+  const params = { screen_name: user, count: 4, tweet_mode: 'extended' };
   const url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
   return new Promise((resolve, reject) => {
     client.get(url, params, (err, tweets) => {
@@ -23,6 +23,5 @@ const getUserTweets = async (user) => {
   const tweets = await getUserTweetsRequest(user);
   return tweets;
 };
-getUserTweets('kanyewest');
 
 module.exports.getUserTweets = getUserTweets;

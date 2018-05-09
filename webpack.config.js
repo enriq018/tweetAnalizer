@@ -1,38 +1,35 @@
-const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+
+const SRC_DIR = path.join(__dirname, '/client/src/app.js');
+const DIST_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = {
-  entry: ["./client/src/app.js"],
+  entry: ['babel-polyfill', SRC_DIR],
   output: {
-    path: path.resolve(__dirname, "client/dist"),
-    filename: "bundle.js"
+    path: DIST_DIR,
+    filename: 'bundle.js',
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   devServer: {
-    contentBase: "./dist"
+    contentBase: './dist',
   },
+
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        loaders: ['babel-loader?presets[]=react,presets[]=es2015'],
       },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader"
-          }
-        ]
-      }
-    ]
+    ],
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./client/src/index.html",
-      filename: "./index.html"
-    })
-  ]
+      template: './client/src/index.html',
+      filename: './index.html',
+    }),
+  ],
 };
