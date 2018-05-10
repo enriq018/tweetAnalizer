@@ -17,9 +17,7 @@ class NavbarContainer extends React.Component {
 
   render() {
     return (
-      <div>
       <Navbar searchBox={this.searchBox} analyzeUser={this.props.analyzeUser} user={this.state.username} />
-      </div>
     );
   }
 }

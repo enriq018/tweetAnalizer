@@ -9,13 +9,14 @@ import { MostFreq } from '../present/MostFreq.jsx';
 import { ProgressBars } from '../present/ProgressBars.jsx';
 import { mock } from '../../../mock.js';
 
+
 class MainContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       tweetData: mock,
-      freqMoodData: [],
-      freqMoodMap: {fear:1},
+      freqMoodData: [undefined],
+      freqMoodMap: { fear: 1 },
     };
     this.analyzeUser = this.analyzeUser.bind(this);
   }
@@ -31,6 +32,7 @@ class MainContainer extends React.Component {
       });
   }
 
+
   analyzeUser(username) {
     getUserTweets(username)
       .then((data) => {
@@ -44,13 +46,13 @@ class MainContainer extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container" >
         <NavbarContainer analyzeUser={this.analyzeUser} />
         <br />
-        <div className="box">
+        <div className="box tweetContainer">
           <Tweets tweetData={this.state.tweetData} freqMoodData={this.state.freqMoodData} />
         </div>
-        <div className='box'>
+        <div className='section'>
         <ProgressBars tweetData={this.state.tweetData} freqMoodMap={this.state.freqMoodMap}/>
         </div>
       </div>

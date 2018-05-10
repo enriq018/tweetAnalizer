@@ -15,6 +15,7 @@ const getWrapper = (username) => {
 
 const getUserTweets = async (username) => {
   const data = await getWrapper(username);
+  
   return data;
 };
 

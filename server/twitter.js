@@ -9,7 +9,7 @@ const client = new Twitter({
 
 const getUserTweetsRequest = (user) => {
   // count = number of recent tweets
-  const params = { screen_name: user, count: 6, tweet_mode: 'extended' };
+  const params = { screen_name: user, count: 8, tweet_mode: 'extended' };
   const url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
   return new Promise((resolve, reject) => {
     client.get(url, params, (err, tweets) => {

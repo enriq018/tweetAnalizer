@@ -1,27 +1,21 @@
 import React, { Component } from "react";
 
 const Navbar = ({ searchBox, analyzeUser, user }) => (
-  <div className="box navbar">
-    <div className="columns is-mobile">
-      <div className="column is-half ">
-        <h1>Tweet Analyzer</h1>
-      </div>
-      <div className="column is-half">
-      <div className="field has-addons">
-      <div className="control">
-        <input onChange={(e) => searchBox(e.target.value)}className="input" type="text" placeholder="Search Twitter User"/>
-      </div>
-      <div className="control">
-        <a onClick={()=> analyzeUser(user)}className="button is-info">
-          Search
-        </a>
+  <nav className="level navbar">
+    <div className="level-left">
+      <div className="level-item title is-italic">
+        <strong>Tweet Analyzer</strong>
       </div>
     </div>
+    <div className="level-right">
+      <div className="level-item">
+      <input onChange={(e) => searchBox(e.target.value)}className="input" type="text" placeholder="Search Twitter User" />
+      </div>
+      <div className="level-item">
+        <a onClick={()=> analyzeUser(user)}className="button is-info">Search</a>
       </div>
     </div>
-  </div>
-)
+  </nav>
+);
 
 module.exports.Navbar = Navbar;
-
-
