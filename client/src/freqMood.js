@@ -11,7 +11,7 @@ const freqMood = (arr) => {
   });
   const maxMood = Math.max(...Object.values(moodMap));
   const output = Object.keys(moodMap).filter(el => moodMap[el] === maxMood);
-  return output;
+  return { max: output, moodMap };
 };
 
 module.exports.freqMood = freqMood;

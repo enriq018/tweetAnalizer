@@ -11,7 +11,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', 'png'],
   },
   devServer: {
     contentBase: './dist',
@@ -23,6 +23,13 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loaders: ['babel-loader?presets[]=react,presets[]=es2015'],
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+          'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
+          'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ],
       },
     ],
   },

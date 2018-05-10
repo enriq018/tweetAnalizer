@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 
 const path = require('path');
+
 const bodyParser = require('body-parser');
 const { mock } = require('../mock.js');
 
@@ -16,10 +17,15 @@ app.use('/', express.static(path.join(__dirname, '../client/dist')));
 app.use(bodyParser.json());
 
 app.get('/tweets/:username', async (req, res) => {
-  // const data = await analyzeTweets(req.params.username);
-  // res.send(data);
+  const data = await analyzeTweets(req.params.username);
+  res.send(data);
+});
+
+app.get('/init', (req, res) => {
+  console.log('initualizing app');
   res.send(mock);
 });
+
 
 app.listen(port, () => console.log(`live on port: ${port}`));
 

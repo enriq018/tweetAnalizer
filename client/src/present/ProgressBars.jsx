@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
 
-const ProgressBars = props => (
-    <div className="columns">
-      <div className="column">
-      User's Mood Stats
-      <progress className="progress is-primary" value="15" max="100">30%</progress>
-      <progress className="progress is-link" value="30" max="100">30%</progress>
-      </div>
-      <div className="column">
-        People's Mood Stats
-        <progress className="progress is-primary" value="75" max="100">30%</progress>
-        <progress className="progress is-link" value="30" max="100">30%</progress>
-      </div>
+import { moods } from '../moods.js';
+
+const Bar = ({ count, type }) => (
+  <div className="columns">
+    <div className="column is-one-third">
+      <p>{type}: {count}</p>
     </div>
+    <div className="column">
+      <progress className={`progress ${moods[type]}`} value={count * 20} max="100">10%</progress>
+    </div>
+  </div>
+);
+
+const ProgressBars = ({ tweetData, freqMoodMap }) => (
+  <div className="columns">
+    <div className="column is-half userProgress">
+      <h2><strong>{tweetData[0].tweet.user.screen_name}'s moods</strong></h2>
+      <br/>
+      {Object.keys(freqMoodMap).map((el, i) => <Bar key={i} count={freqMoodMap[el]} type={el} />)}
+    </div>
+
+    <div className="column is-half userProgress">
+      <h2><strong>People's moods</strong></h2>
+      <br/>
+      {Object.keys(freqMoodMap).map((el, i) => <Bar key={i} count={freqMoodMap[el]} type={el} />)}
+    </div>
+  </div>
 );
 
 module.exports.ProgressBars = ProgressBars;
