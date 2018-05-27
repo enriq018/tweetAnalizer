@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { mockData } from '../../../../mock.js';
+import { mock } from '../../../../mock.js';
 import axios from 'axios';
+import { freqMood } from '../../freqMood.js';
 
 import Info from '../Info/InfoContainer.jsx';
 import Feed from '../Feed.jsx';
 
-console.log(mockData);
+console.log('modckkk', mock);
 
 const Chart = () => (
   <h1 className='feed'>CHART STUFF </h1>
@@ -15,7 +16,7 @@ class ViewContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      twitterData: [],
+      twitterData: mock,
       feedSelected: 'Feed',
       searchName: '',
     };
@@ -29,6 +30,7 @@ class ViewContainer extends React.Component {
     const url = 'http://localhost:3000/init';
     axios.get(url)
       .then((data) => {
+
         this.setState({ twitterData: data.data });
       });
   }
@@ -39,7 +41,7 @@ class ViewContainer extends React.Component {
 
   selectedFeed() {
     return this.state.feedSelected === 'Feed' ?
-      <Feed twitterData={this.state.twitterData} /> : <Chart />;
+      <Feed twitterData={this.state.twitterData} freqData={freqMood(this.state.twitterData)} /> : <Chart />;
   }
 
   searchText(e) {
