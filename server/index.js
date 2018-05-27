@@ -19,6 +19,8 @@ app.use(bodyParser.json());
 app.get('/tweets/:username', async (req, res) => {
   const data = await analyzeTweets(req.params.username);
   res.send(data);
+  // console.log(req.params.username)
+  // res.send(mock);
 });
 
 app.get('/init', (req, res) => {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { MainContainer } from './container/MainContainer.jsx';
-
+import MainContainer from './components/MainContainer.jsx';
 
 const App = () => (
   <MainContainer />
