@@ -5,19 +5,16 @@ import { freqMood } from '../../freqMood.js';
 
 import Info from '../Info/InfoContainer.jsx';
 import Feed from '../Feed.jsx';
+import Chart from '../Chart.jsx'
 
-console.log('modckkk', mock);
 
-const Chart = () => (
-  <h1 className='feed'>CHART STUFF </h1>
-)
 
 class ViewContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       twitterData: mock,
-      feedSelected: 'Feed',
+      feedSelected: 'Chart',
       searchName: '',
     };
     this.changeFeed = this.changeFeed.bind(this);
@@ -41,7 +38,7 @@ class ViewContainer extends React.Component {
 
   selectedFeed() {
     return this.state.feedSelected === 'Feed' ?
-      <Feed twitterData={this.state.twitterData} freqData={freqMood(this.state.twitterData)} /> : <Chart />;
+      <Feed twitterData={this.state.twitterData} freqData={freqMood(this.state.twitterData)} /> : <Chart data={this.state.twitterData}/>;
   }
 
   searchText(e) {
@@ -61,6 +58,7 @@ class ViewContainer extends React.Component {
       <div className="view">
         <Info changeFeed={this.changeFeed} searchText={this.searchText} searchUser={this.searchUser} />
         { this.selectedFeed() }
+
       </div>
     );
   }
