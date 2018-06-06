@@ -12,8 +12,8 @@ const InfoContainer = ({ changeFeed, searchText, searchUser }) => (
         </a>
       </div>
     </div>
-    <button onClick={() => changeFeed("Feed")} className="info_item">Feed</button>
-    <button onClick={() => changeFeed("Chart")} className="info_item">Chart</button>
+    <button onClick={() => changeFeed("Feed")} className="info_item button is-link  is-large">Feed</button>
+    <button onClick={() => changeFeed("Chart")} className="info_item button is-link  is-large">Chart</button>
   </div>
 );
 export default InfoContainer;

@@ -15,7 +15,7 @@ const MostFreq = ({ freqData, data}) => {
   return (
     <button className={`button ${moods[freqData.max[0]]} topBar`}>
     <span>
-    {`${data[0].tweet.user.screen_name}'s most frequent mood: ${freqData.max}`}
+      {<p className="title is-5 is-italic">{data[0].tweet.user.screen_name}'s Most Frequent Mood: {freqData.max}</p>}
     </span>
     </button>
 
