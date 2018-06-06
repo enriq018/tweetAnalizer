@@ -14,7 +14,7 @@ class ViewContainer extends React.Component {
     super(props);
     this.state = {
       twitterData: mock,
-      feedSelected: 'Chart',
+      feedSelected: 'Feed',
       searchName: '',
     };
     this.changeFeed = this.changeFeed.bind(this);

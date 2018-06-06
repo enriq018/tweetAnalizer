@@ -25,7 +25,7 @@ const sampleData = [
 ]
 
 const PieGraph = ({ data, colors, total }) => (
-  <div className="bar box">
+  <div className="bar box mainPie">
   <p className="has-text-centered underline">{`Total Tweets Analyzied: ${total}`}</p>
   <VictoryPie
   colorScale={colors}
@@ -42,7 +42,7 @@ const Chart = ({ data }) => {
   const wrapColors = moods.map(el => colorMatcher[Object.keys(el)]);
 
   return (
-    <div className='chart chartPic'>
+    <div className='chart'>
     <h1 className='bar box'>Stuff</h1>
     <PieGraph data={wrapMoods} colors={wrapColors} total={data.length}/>
      </div>

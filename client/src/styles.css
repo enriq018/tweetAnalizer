@@ -6,6 +6,10 @@
   height:100vh;
 }
 
+.underline {
+  border-bottom: 1px solid black;
+}
+
 body {
  background-color:rgba(134, 208, 255, 0.426);
 }
@@ -22,20 +26,42 @@ body {
 
 .info {
   /* border: 1px solid red; */
-  margin: 15px 0px 0px 15px;
+  /* margin: 15px 0px 0px 15px;
 
   flex-basis:20%;
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
   height:95vh;
-  flex-grow:0;
+  flex-grow:0; */
+
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 15px 0px 0px 15px;
+  padding: 10px;
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 50vh;
+  flex-grow: 0;
+
+  /* flex-grow: 1;
+  margin: 14px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 95vh;
+  flex-basis: 200px;
+  background-color: rgba(109, 255, 187, 0); */
+
+
 
 
 }
 
 .info_item {
-  margin:5px;
+  margin:35px;
 }
 
 .searchBar {
@@ -59,7 +85,6 @@ body {
 .rounded {
   border-radius: 50%;
   transform: scale(1.2);
-  border: px solid rgb(0, 0, 0);
 
 }
 
@@ -88,8 +113,13 @@ body {
   margin-left:50px;
   margin-right: 50px;
   overflow:auto;
+  overflow-y:scroll;
+
 
 }
+::-webkit-scrollbar {
+  display: none;
+  }
 
 .tweet{
   margin:5px;
@@ -121,3 +151,34 @@ body {
   box-shadow: 0 0 0 2px #000000;
   transition: .5s ease;
 }
+
+.chart {
+  /* border: 1px solid green; */
+  /* margin:2px; */
+
+  display:flex;
+  flex-direction: column;
+  /* justify-content:space-around; */
+  height:95vh;
+  /* flex-basis: 200px; */
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-grow:1;
+
+
+
+
+}
+
+.bar {
+  align-self:center;
+
+}
+
+.mainPie {
+  box-shadow: 0 0 0 1px #000000;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.59);
+
+}
+
+
