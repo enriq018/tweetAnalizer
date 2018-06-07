@@ -1,5 +1,5 @@
 # tweetAnalizer
-Search a twitter user and see their recent tweets analyzed by what mood the tweet had, the most common mood their tweets had, and what the most common mood other people who tweet about them had.
+Search a twitter user and see each tweet's tone analyzied as well as what the most common tone the user had overall.
 ##### Feed view with twitter user "barrackobama" searched
 ![alt text](./TA1.png "feed view")
 ##### Chart view with twitter user "barrackobama" searched
