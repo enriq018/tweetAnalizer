@@ -5,6 +5,6 @@ Search a twitter user and see their recent tweets analyzed by what mood the twee
 ##### Chart view with twitter user "barrackobama" searched
 ![alt text](./TA2.png "Teacher page")
 ##### Feed view with twitter user "stephencurry30" searched
-![alt text](./TA3.png "feed view")
+![alt text](./TA5.png "feed view")
 ##### Chart view with twitter user "stephencurry30" searched
-![alt text](./TA4.png "Teacher page")
+![alt text](./TA6.png "Teacher page")
