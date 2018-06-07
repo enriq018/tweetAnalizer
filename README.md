@@ -1,6 +1,10 @@
 # tweetAnalizer
 Search a twitter user and see their recent tweets analyzed by what mood the tweet had, the most common mood their tweets had, and what the most common mood other people who tweet about them had.
-##### Home page (feed view)
+##### Feed view with twitter user "barrackobama" searched
 ![alt text](./TA1.png "feed view")
-##### Home page (chart view)
+##### Chart view with twitter user "barrackobama" searched
 ![alt text](./TA2.png "Teacher page")
+##### Feed view with twitter user "stephencurry30" searched
+![alt text](./TA3.png "feed view")
+##### Chart view with twitter user "stephencurry30" searched
+![alt text](./TA4.png "Teacher page")
