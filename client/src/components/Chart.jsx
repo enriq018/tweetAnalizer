@@ -15,9 +15,9 @@ const colorMatcher = {
   undefined: '#4fd161',
 };
 
-const PieGraph = ({ data, colors, total }) => (
+const PieGraph = ({ data, colors, total, name }) => (
   <div className="bar box mainPie">
-    <p className="has-text-centered underline">{`Total Tweets Analyzied: ${total}`}</p>
+    <p className="has-text-centered title is-4 underline">{`${name} Tweets Analyzied: ${total}`}</p>
     <VictoryPie
       colorScale={colors}
       data={data}
@@ -34,7 +34,7 @@ const Chart = ({ data }) => {
 
   return (
     <div className="chart">
-      <PieGraph data={wrapMoods} colors={wrapColors} total={data.length} />
+      <PieGraph data={wrapMoods} colors={wrapColors} total={data.length} name={data[0].tweet.user.screen_name} />
     </div>
   );
 };
