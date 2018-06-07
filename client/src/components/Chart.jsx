@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
 import * as V from 'victory';
-import { VictoryBar, VictoryChart, VictoryAxis, VictoryPie,
-  VictoryTheme } from 'victory';
-
+import { VictoryPie } from 'victory';
 import { allMoods } from '../allMoods.js';
 
 const colorMatcher = {
@@ -15,25 +13,18 @@ const colorMatcher = {
   Tentative: '#3273dc',
   Sadness: '#9e9e9e',
   undefined: '#4fd161',
-}
-
-
-const sampleData = [
-  { x: "Cats", y: 35 },
-  { x: "Dogs", y: 40 },
-  { x: "Birds", y: 55 }
-]
+};
 
 const PieGraph = ({ data, colors, total }) => (
   <div className="bar box mainPie">
-  <p className="has-text-centered underline">{`Total Tweets Analyzied: ${total}`}</p>
-  <VictoryPie
-  colorScale={colors}
-    data={data}
-    padding={{ left: 95, right: 95}}
-    />
+    <p className="has-text-centered underline">{`Total Tweets Analyzied: ${total}`}</p>
+    <VictoryPie
+      colorScale={colors}
+      data={data}
+      padding={{ left: 95, right: 95 }} />
   </div>
-)
+);
+
 const Chart = ({ data }) => {
   const moods = allMoods(data);
   const wrapMoods = moods.map((el) => {
@@ -42,11 +33,10 @@ const Chart = ({ data }) => {
   const wrapColors = moods.map(el => colorMatcher[Object.keys(el)]);
 
   return (
-    <div className='chart'>
-    <h1 className='bar box'>Stuff</h1>
-    <PieGraph data={wrapMoods} colors={wrapColors} total={data.length}/>
-     </div>
-  )
-}
+    <div className="chart">
+      <PieGraph data={wrapMoods} colors={wrapColors} total={data.length} />
+    </div>
+  );
+};
 
 export default Chart;

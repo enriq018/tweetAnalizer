@@ -10,7 +10,7 @@ const freqMood = (arr) => {
     });
   });
   const maxMood = Math.max(...Object.values(moodMap));
-  const output = Object.keys(moodMap).filter(el => moodMap[el] === maxMood);
+  const output = [Object.keys(moodMap).filter(el => moodMap[el] === maxMood)[0]];
   return { max: output, moodMap };
 };
 
